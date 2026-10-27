@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-free-wearedevs-moonsecv3-and-sum-obf-deobfuscator-92424"))()
