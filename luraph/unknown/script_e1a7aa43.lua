@@ -1,0 +1,2 @@
+-- uses luraph so xeno and solara are not supportedin game, v2.6
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jodta/my-scripts/refs/heads/main/Main%20Scripts/Scriptlocker%20Demonology"))()
