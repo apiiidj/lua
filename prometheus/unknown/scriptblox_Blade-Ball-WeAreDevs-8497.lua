@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://scriptblox.com/raw/Blade-Ball-WeAreDevs-8497"))()
