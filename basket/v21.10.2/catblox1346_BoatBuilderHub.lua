@@ -1,0 +1,12 @@
+-- This file was protected using Basket Obfuscator v21.10.2 [https://discord.gg/4nSEd2Pu8f]
+
+--[[game:GetService("StarterGui"):SetCore("SendNotification", {
+	Title = "!! Warning Please Read !!";
+	Text = "The discord was hacked!!\nLeave the old discord ASAP and join the new one for updates and information.";
+	Duration = 45;
+})--]]
+
+setclipboard("https://discord.gg/4nSEd2Pu8f")
+
+-- Boat Builder Hub Key System Loader
+loadstring(game:HttpGet("https://raw.githubusercontent.com/catblox1346/BuilderHub/refs/heads/main/Loader.lua"))()
