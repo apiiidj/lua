@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://obj.wearedevs.net/203720/scripts/99%20nights%20in%20a%20forest%20voidware.lua"))()
