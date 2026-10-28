@@ -1002720,3 +1002720,7 @@ https://sapien-w76a.onrender.com/stage1?token=_75e5e70728694bac
 https://sapien-w76a.onrender.com/stage1?token=_2ab5a278ee721d38
 https://sapien-w76a.onrender.com/stage1?token=_95b3417e3a1d86af
 https://sapien-w76a.onrender.com/stage1?token=_aa2134bf4fd9cfd0
+https://scriptblox.com/raw/Atlanta-Trenches-SuperNova-oror-ATL-233941
+https://scriptblox.com/raw/Basketball-Legends-Axonic-or-Auto-Green-or-Auto-Shoot-233914
+https://raw.githubusercontent.com/idonotlikeppl/supernovav2/refs/heads/main/games/atltrenches.lua
+https://raw.githubusercontent.com/idonotlikeppl/supernovav2/refs/heads/main/util/exunys-fork-isaeva.lua
