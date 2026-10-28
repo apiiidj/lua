@@ -1,0 +1,5 @@
+
+
+-- This file was protected using Vortex Obfuscator [ClydeProtection]
+
+game:GetService("Players").LocalPlayer:Kick("This script no longer works. If you open a ticket you will get banned Ce script ne fonctionne plus. Si vous ouvrez un ticket vous serez banni Dieses Script funktioniert nicht mehr. Wenn du ein Ticket eröffnest wirst du gebannt 这个脚本不再工作了。如果你提交工单你会被封禁 Este script ya no funciona. Si abres un ticket serás baneado Este script não funciona mais. Se você abrir um ticket será banido Questo script non funziona più. Se apri un ticket verrai bannato このスクリプトはもう動作しません。チケットを開くとBANされます 이 스크립트는 더 이상 작동하지 않습니다. 티켓을 열면 차단됩니다 Этот скрипт больше не работает. Если вы откроете тикет вас забанят यह स्क्रिप्ट अब काम नहीं करती है। यदि आप टिकट खोलते हैं तो आपको प्रतिबंधित कर दिया जाएगा هذا السكربت لم يعد يعمل. إذا فتحت تذكرة سيتم حظرك")
