@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dizzzzeeee/Bordr-Game-AutoFarm/refs/heads/main/moonveil.lua"))()
