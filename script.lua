@@ -35,7 +35,6 @@ local function makeButton(parent, pos, size, text, bg, ts)
     return b
 end
 
--- GUI
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "SuperRingPartsGUI"
 ScreenGui.ResetOnSpawn = false
@@ -164,7 +163,6 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
--- Player Selector
 local targetPlayer, targetShapeEnabled, tpToTargetEnabled = nil, false, false
 
 local PlayerSelector = Instance.new("Frame")
@@ -275,7 +273,6 @@ Players.PlayerRemoving:Connect(function(p)
     if PlayerSelector.Visible then refreshPlayerList(SearchBox.Text) end
 end)
 
--- Network setup
 if not getgenv().Network then
     getgenv().Network = { BaseParts = {}, Velocity = Vector3.new(14.46262424, 14.46262424, 14.46262424) }
     Network.RetainPart = function(Part)
@@ -294,7 +291,6 @@ if not getgenv().Network then
     end)
 end
 
--- Parts tracking
 local radius, rotationSpeed, attractionStrength = 50, 10, 1000
 local activeMode = "off"
 local planeMode = "horizontal"
@@ -339,77 +335,76 @@ local function getHRP(player)
     return char and char:FindFirstChild("HumanoidRootPart")
 end
 
--- ============================================
--- SHAPES
--- ============================================
+local partSlot = setmetatable({}, {__mode = "k"})
+local function getSlot(part)
+    if not partSlot[part] then
+        partSlot[part] = #parts > 0 and math.random() or 0
+    end
+    return partSlot[part]
+end
 
 local function applyShape(center, mode)
     local count = #parts
     if count == 0 then return end
     local t = globalTime
+    local rot = math.rad(rotationSpeed) * t
 
     for i, part in ipairs(parts) do
         if part.Parent and part:IsDescendantOf(workspace) and not part.Anchored then
             local target
-            local frac = (i - 1) / count
+            local frac = getSlot(part)
 
             if mode == "ring" then
+                local angle = frac * math.pi * 2 + rot
                 if planeMode == "vertical" then
-                    local angle = frac * math.pi * 2 + math.rad(rotationSpeed) * t
-                    local r = radius
-                    target = center + Vector3.new(
-                        math.cos(angle) * r,
-                        math.sin(angle) * r,
-                        math.sin(angle) * 0.001
-                    )
-                else
-                    local angle = frac * math.pi * 2 + math.rad(rotationSpeed) * t
                     target = center + Vector3.new(
                         math.cos(angle) * radius,
-                        math.sin(frac * math.pi * 4) * 2,
+                        math.sin(angle) * radius,
+                        0
+                    )
+                else
+                    target = center + Vector3.new(
+                        math.cos(angle) * radius,
+                        0,
                         math.sin(angle) * radius
                     )
                 end
 
             elseif mode == "aura" then
                 local phi = frac * math.pi * 2 + t * 0.5
-                local theta = (frac * 13.37 + i * 0.7) % math.pi
-                local pulse = 1 + math.sin(t * 2 + i) * 0.15
+                local theta = frac * 13.37 % math.pi
+                local pulse = 1 + math.sin(t * 2 + frac * 10) * 0.15
                 local r = radius * 0.7 * pulse
                 target = center + Vector3.new(
                     math.sin(theta) * math.cos(phi) * r,
-                    math.cos(theta) * r + math.sin(t * 3 + i) * 2,
+                    math.cos(theta) * r,
                     math.sin(theta) * math.sin(phi) * r
                 )
 
             elseif mode == "heart" then
-                -- Cœur 3D fixe (pas de battement)
-                local a = frac * math.pi * 2 + math.rad(rotationSpeed) * t
+                local a = frac * math.pi * 2 + rot
                 local sx = 16 * math.sin(a)^3
                 local sy = 13 * math.cos(a) - 5 * math.cos(2*a) - 2 * math.cos(3*a) - math.cos(4*a)
                 local s = radius / 20
                 target = center + Vector3.new(
                     sx * s,
                     -sy * s + 5,
-                    math.sin(frac * math.pi * 6) * (radius * 0.15)
+                    0
                 )
 
             elseif mode == "sphere" then
-                -- Sphère fixe (pas de rotation)
                 local phi = math.acos(1 - 2 * frac)
-                local theta = math.pi * (1 + math.sqrt(5)) * i
-                local r = radius
+                local theta = math.pi * (1 + math.sqrt(5)) * frac * 100
                 target = center + Vector3.new(
-                    math.sin(phi) * math.cos(theta) * r,
-                    math.cos(phi) * r,
-                    math.sin(phi) * math.sin(theta) * r
+                    math.sin(phi) * math.cos(theta) * radius,
+                    math.cos(phi) * radius,
+                    math.sin(phi) * math.sin(theta) * radius
                 )
 
             elseif mode == "wall" then
                 local cam = workspace.CurrentCamera
                 local look = cam and cam.CFrame.LookVector or Vector3.new(0, 0, -1)
                 local right = cam and cam.CFrame.RightVector or Vector3.new(1, 0, 0)
-                local up = Vector3.new(0, 1, 0)
                 local cols = math.ceil(math.sqrt(count))
                 local row = math.floor((i - 1) / cols)
                 local col = (i - 1) % cols
@@ -418,10 +413,10 @@ local function applyShape(center, mode)
                 target = center
                     + look * 8
                     + right * (-spread + col * spacing)
-                    + up * (-spread * 0.5 + row * spacing)
+                    + Vector3.new(0, 1, 0) * (-spread * 0.5 + row * spacing)
 
             elseif mode == "tornado" then
-                local angle = frac * math.pi * 12 + math.rad(rotationSpeed) * t
+                local angle = frac * math.pi * 12 + rot
                 local h = (frac * 2 - 1) * radius * 1.5
                 local r = radius * 0.8 * (1 - math.abs(frac - 0.5) * 1.5)
                 target = center + Vector3.new(
@@ -432,15 +427,12 @@ local function applyShape(center, mode)
             end
 
             if target then
-                part.Velocity = (target - part.Position).Unit * attractionStrength
+                local delta = target - part.Position
+                part.Velocity = delta.Unit * math.min(attractionStrength, delta.Magnitude * 50)
             end
         end
     end
 end
-
--- ============================================
--- BOUCLES
--- ============================================
 
 RunService.Heartbeat:Connect(function(dt)
     globalTime = globalTime + dt
@@ -482,10 +474,6 @@ RunService.Heartbeat:Connect(function()
         end
     end
 end)
-
--- ============================================
--- UI LOGIC
--- ============================================
 
 local SHAPE_LABELS = {
     ring = "Ring", aura = "Aura", heart = "Heart",
@@ -585,7 +573,6 @@ end)
 
 updateShapeButtons()
 
--- Notifications
 StarterGui:SetCore("SendNotification", { Title = "Join me Discord !", Text = "For More Op Scripts !", Duration = 5 })
 local ok, content = pcall(function()
     return Players:GetUserThumbnailAsync(Players:GetUserIdFromNameAsync("NannaDev"), Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
