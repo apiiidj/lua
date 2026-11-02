@@ -343,11 +343,15 @@ local function getSlot(part)
     return partSlot[part]
 end
 
-local function applyShape(center, mode)
+local function applyShape(center, mode, frontCFrame)
     local count = #parts
     if count == 0 then return end
     local t = globalTime
     local rot = math.rad(rotationSpeed) * t
+
+    local look = frontCFrame and frontCFrame.LookVector or Vector3.new(0, 0, -1)
+    local right = frontCFrame and frontCFrame.RightVector or Vector3.new(1, 0, 0)
+    local up = frontCFrame and frontCFrame.UpVector or Vector3.new(0, 1, 0)
 
     for i, part in ipairs(parts) do
         if part.Parent and part:IsDescendantOf(workspace) and not part.Anchored then
@@ -357,17 +361,9 @@ local function applyShape(center, mode)
             if mode == "ring" then
                 local angle = frac * math.pi * 2 + rot
                 if planeMode == "vertical" then
-                    target = center + Vector3.new(
-                        math.cos(angle) * radius,
-                        math.sin(angle) * radius,
-                        0
-                    )
+                    target = center + right * math.cos(angle) * radius + up * math.sin(angle) * radius
                 else
-                    target = center + Vector3.new(
-                        math.cos(angle) * radius,
-                        0,
-                        math.sin(angle) * radius
-                    )
+                    target = center + right * math.cos(angle) * radius + look * math.sin(angle) * radius
                 end
 
             elseif mode == "aura" then
@@ -375,36 +371,30 @@ local function applyShape(center, mode)
                 local theta = frac * 13.37 % math.pi
                 local pulse = 1 + math.sin(t * 2 + frac * 10) * 0.15
                 local r = radius * 0.7 * pulse
-                target = center + Vector3.new(
-                    math.sin(theta) * math.cos(phi) * r,
-                    math.cos(theta) * r,
-                    math.sin(theta) * math.sin(phi) * r
-                )
+                target = center
+                    + right * (math.sin(theta) * math.cos(phi) * r)
+                    + up * (math.cos(theta) * r)
+                    + look * (math.sin(theta) * math.sin(phi) * r)
 
             elseif mode == "heart" then
                 local a = frac * math.pi * 2 + rot
                 local sx = 16 * math.sin(a)^3
                 local sy = 13 * math.cos(a) - 5 * math.cos(2*a) - 2 * math.cos(3*a) - math.cos(4*a)
                 local s = radius / 20
-                target = center + Vector3.new(
-                    sx * s,
-                    -sy * s + 5,
-                    0
-                )
+                local heartCenter = center + look * (radius + 8)
+                target = heartCenter
+                    + right * (sx * s)
+                    + up * (sy * s)
 
             elseif mode == "sphere" then
                 local phi = math.acos(1 - 2 * frac)
                 local theta = math.pi * (1 + math.sqrt(5)) * frac * 100
-                target = center + Vector3.new(
-                    math.sin(phi) * math.cos(theta) * radius,
-                    math.cos(phi) * radius,
-                    math.sin(phi) * math.sin(theta) * radius
-                )
+                target = center
+                    + right * (math.sin(phi) * math.cos(theta) * radius)
+                    + up * (math.cos(phi) * radius)
+                    + look * (math.sin(phi) * math.sin(theta) * radius)
 
             elseif mode == "wall" then
-                local cam = workspace.CurrentCamera
-                local look = cam and cam.CFrame.LookVector or Vector3.new(0, 0, -1)
-                local right = cam and cam.CFrame.RightVector or Vector3.new(1, 0, 0)
                 local cols = math.ceil(math.sqrt(count))
                 local row = math.floor((i - 1) / cols)
                 local col = (i - 1) % cols
@@ -413,17 +403,16 @@ local function applyShape(center, mode)
                 target = center
                     + look * 8
                     + right * (-spread + col * spacing)
-                    + Vector3.new(0, 1, 0) * (-spread * 0.5 + row * spacing)
+                    + up * (-spread * 0.5 + row * spacing)
 
             elseif mode == "tornado" then
                 local angle = frac * math.pi * 12 + rot
                 local h = (frac * 2 - 1) * radius * 1.5
                 local r = radius * 0.8 * (1 - math.abs(frac - 0.5) * 1.5)
-                target = center + Vector3.new(
-                    math.cos(angle) * r,
-                    h,
-                    math.sin(angle) * r
-                )
+                target = center
+                    + right * (math.cos(angle) * r)
+                    + up * h
+                    + look * (math.sin(angle) * r)
             end
 
             if target then
@@ -439,12 +428,12 @@ RunService.Heartbeat:Connect(function(dt)
 
     if activeMode ~= "off" then
         local hrp = getHRP(LocalPlayer)
-        if hrp then applyShape(hrp.Position, activeMode) end
+        if hrp then applyShape(hrp.Position, activeMode, hrp.CFrame) end
     end
 
     if targetShapeEnabled and targetPlayer then
         local hrp = getHRP(targetPlayer)
-        if hrp then applyShape(hrp.Position, activeMode) end
+        if hrp then applyShape(hrp.Position, activeMode, hrp.CFrame) end
     end
 end)
 
