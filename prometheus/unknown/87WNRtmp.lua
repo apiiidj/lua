@@ -23,7 +23,7 @@
     <meta name="google-site-verification" content="jkUAIOE8owUXu8UXIhRLB9oHJsWBfOgJbZzncqHoF4A" />
     <link rel="canonical" href="https://pastebin.com/87WNRtmp" />
         <meta name="csrf-param" content="_csrf-frontend">
-<meta name="csrf-token" content="2ETCWJH0pE68tLYASKsAahz-3Du-VyDzVZyduD7JAruXPYo03KH-e_Ph2Wd5mWdfK66mWOoNY74E1azNT79E0g==">
+<meta name="csrf-token" content="1wnUPET1-8pCraFXRUuoN_THZ5nEw5BfkeEqJnjSz9-7XJlUMMOuqy-Y9SMXCtB1m4BR4Pb02i6lqUYWE5Sktw==">
 
 <link href="/assets/c80611c4/css/bootstrap.min.css" rel="stylesheet">
 <link href="/assets/d65ff796/dist/bootstrap-tagsinput.css" rel="stylesheet">        
@@ -151,7 +151,7 @@
                                     </div>
 
                 <div class="visits" title="Unique visits to this paste">
-                    1,959                </div>
+                    1,970                </div>
 
                                     <div class="rating js-post-rating" data-key="87WNRtmp" title="Rating">
                         0                    </div>
@@ -251,60 +251,66 @@
     <ul class="sidebar__menu">
 
                     <li>
-                <a href="/n0HSzMGx?source=public_pastes">Tabs</a>
+                <a href="/u3vFtA91?source=public_pastes">✅ Changelly Exploit</a>
                 <div class="details">
                     
-                    8 min ago
-                    | 1.39 KB                </div>
+                    13 min ago
+                    | 0.44 KB                </div>
             </li>
                     <li>
-                <a href="/Kus23PVQ?source=public_pastes">Transmigration</a>
+                <a href="/UkQHmLjU?source=public_pastes">Power of AI</a>
                 <div class="details">
+                                            CSS |
                     
-                    8 hours ago
-                    | 1.25 KB                </div>
+                    14 min ago
+                    | 0.44 KB                </div>
             </li>
                     <li>
-                <a href="/vmL5zrrG?source=public_pastes">Immortal</a>
+                <a href="/0ZascqtU?source=public_pastes">+12,000$ in 2 days</a>
                 <div class="details">
+                                            CSS |
                     
-                    8 hours ago
-                    | 1.34 KB                </div>
+                    14 min ago
+                    | 0.70 KB                </div>
             </li>
                     <li>
-                <a href="/uELjyd6G?source=public_pastes">temp sglang key</a>
+                <a href="/6pPzLsrK?source=public_pastes">✅ Changelly Exploit</a>
                 <div class="details">
                     
-                    23 hours ago
-                    | 0.07 KB                </div>
+                    14 min ago
+                    | 0.44 KB                </div>
             </li>
                     <li>
-                <a href="/gYjyXf5x?source=public_pastes">test_create</a>
+                <a href="/xKq7hqD3?source=public_pastes">Bonus Swap Exploit</a>
                 <div class="details">
+                                            CSS |
                     
-                    1 day ago
-                    | 0.04 KB                </div>
+                    37 min ago
+                    | 0.58 KB                </div>
             </li>
                     <li>
-                <a href="/ayMLvMCP?source=public_pastes">R36S Conf Archive Downloader</a>
+                <a href="/DR7RsQq5?source=public_pastes">✅ Swap sites exploit</a>
                 <div class="details">
+                                            CSS |
                     
-                    2 days ago
-                    | 2.68 KB                </div>
+                    37 min ago
+                    | 0.58 KB                </div>
             </li>
                     <li>
-                <a href="/B1hyLfcF?source=public_pastes">Session Resume</a>
+                <a href="/V2q7WnV6?source=public_pastes">$12.OOO in Claim</a>
                 <div class="details">
+                                            CSS |
                     
-                    3 days ago
-                    | 1.38 KB                </div>
+                    37 min ago
+                    | 0.58 KB                </div>
             </li>
                     <li>
-                <a href="/fREBZL2q?source=public_pastes">Session Handoff</a>
+                <a href="/sRFM5Mg8?source=public_pastes">AI For $$$$</a>
                 <div class="details">
+                                            CSS |
                     
-                    3 days ago
-                    | 1.74 KB                </div>
+                    37 min ago
+                    | 0.58 KB                </div>
             </li>
         
     </ul>
