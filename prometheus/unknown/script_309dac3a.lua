@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-shne-pseudo-deobfuscator-WeAreDevs-LuaObfuscatorcom-235013"))()
