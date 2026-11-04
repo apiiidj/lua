@@ -1013624,3 +1013624,7 @@ https://luaprot.net/api/v2/loaders/get/68137907928363172550
 https://pastebin.com/raw/7ptpyf5e
 https://raw.githubusercontent.com/Kaitoo-KT/Exploit/refs/heads/main/jumpset.lua
 https://you.whimper.xyz/sources/tekkit/aotr
+https://raw.githubusercontent.com/LAMDEPZAIHP/LamMODWorldCup2026/refs/heads/main/LamMODGetkeyVN.lua.txt
+https://you.whimper.xyz/sources/NoxHub/fisch.lua
+https://you.whimper.xyz/sources/NoxHub/toast.lua
+https://raw.githubusercontent.com/centerepic/VelocityFly/main/VelocityFly.lua
