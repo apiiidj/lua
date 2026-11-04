@@ -16,7 +16,7 @@ local cfg = {
   accentInk = "#5865f2",
   poweredBy = true,
   freeKeys = true,
-  hint = "keys last 6h–24h · get one in your browser",
+  hint = "keys last 24h · get one in your browser",
   palette = { s1 = "#11161c", s2 = "#181e26", s3 = "#222933", inset = "#06090d", line = "#2b333e", line2 = "#3e4856", fg = "#f0f5fa", muted = "#a9b4c2", subtle = "#8a95a4", ok = "#7fdca4", danger = "#ff7a6b", warn = "#ffcf5c", discord = "#5865f2", onDiscord = "#ffffff", scrim = "#07090c", shadow = "#000000" },
   copy = { getKey = "Get Key", redeem = "Redeem Key", checking = "checking…", close = "×", placeholder = "paste your key", footer = "secured by pasteblox", kicker = "KEY REQUIRED", idleFree = "get a key, paste it in, then redeem", idleOwner = "paste the key the owner gave you", pasteFirst = "paste your key first", thatsTheLink = "that's the link · open it in your browser, then paste the key here", checkingStatus = "checking your key…", accepted = "key accepted", linkCopied = "link copied · open it in your browser to get a key", linkCopiedOwner = "link copied · keys are given out by the owner, the page explains", linkToast = "key link copied", discordCopied = "discord invite copied · paste it in your browser", discordToast = "discord invite copied", noClipboard = "no clipboard here · copy the %s from the box", unreachable = "couldn't reach pasteblox. try again.", unknown = "something went wrong. try again.", invalid_key = "that key doesn't exist. check it or get a new one.", expired = "this key has expired. get a new one.", revoked = "this key was revoked by the owner.", wrong_device = "this key is locked to another device. ask the owner to reset it.", blacklisted = "you're blacklisted from this script.", disabled = "the key system for this script is off right now." },
   ui = {
@@ -40,7 +40,7 @@ local cfg = {
       { t = "button", role = "close", text = "×", style = "ghost", x = 352, y = 26, w = 28, h = 28, size = 18, r = 8 },
       { t = "frame", x = 20, y = 74, w = 360, h = 1, bg = "#2b333e" },
       { t = "input", role = "box", x = 20, y = 89, w = 360, h = 42, r = 8, size = 14 },
-      { t = "text", text = "keys last 6h–24h · get one in your browser", x = 20, y = 139, w = 360, h = 16, size = 12, weight = 500, color = "#8a95a4" },
+      { t = "text", text = "keys last 24h · get one in your browser", x = 20, y = 139, w = 360, h = 16, size = 12, weight = 500, color = "#8a95a4" },
       { t = "button", role = "get", text = "Get Key", style = "secondary", x = 20, y = 169, w = 176, h = 40, size = 14, r = 8 },
       { t = "button", role = "redeem", text = "Redeem Key", style = "primary", x = 204, y = 169, w = 176, h = 40, size = 14, r = 8 },
       { t = "text", role = "status", text = "", x = 20, y = 221, w = 360, h = 16, size = 12, weight = 500, color = "#a9b4c2" },

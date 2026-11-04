@@ -1,0 +1,2 @@
+--Aug 7) script might take a bit longer to load because of Luraph v14.9 it should be fixed in 2-3 days
+loadstring(game:HttpGet("https://api.jnkie.com/api/v1/luascripts/public/e3531aa3ff92ac36fe4a80d59ebb6da0396cf608ba104ba5bda47ca187aa7ef2/download"))()
