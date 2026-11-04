@@ -1013769,3 +1013769,4 @@ https://pastebin.com/raw/0mdN3fFN
 https://pastebin.com/raw/nxWnza4m
 https://scriptblox.com/raw/Prospecting!-Prospector-55649
 https://api.velaware.xyz/loader
+https://raw.githubusercontent.com/winify-23/script/refs/heads/main/zombie-hyperloot/main.lua
