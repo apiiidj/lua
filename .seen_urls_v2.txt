@@ -1013794,3 +1013794,8 @@ https://scriptblox.com/raw/League-Football-PRE-ALPHA-Plasma-hub-234766
 https://vault.pandauth.com/vss/ae8b9e91d48319be
 https://scriptblox.com/raw/RIVALS-Noa-HUB-or-Aimbot-Esp-triggerbot-234751
 https://pastebin.com/raw/1kaX0Dzp
+https://scriptblox.com/raw/UPD-BRASS-HELL-INCREMENTAL-AUTO-AMMO-234782
+https://pastebin.com/raw/yExBTkre
+https://scriptblox.com/raw/Universal-Script-Zaridium-234752
+https://raw.githubusercontent.com/MidasRX/Zaridium/main/roblox-script/public/latest.lua
+https://raw.githubusercontent.com/MidasRX/Zaridium/main/roblox-script/public/snapshot.lua
